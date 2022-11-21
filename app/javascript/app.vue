@@ -4,14 +4,8 @@
   </p>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      message: "Hello,Vue3",
-    };
-  },
-};
+<script setup>
+const message = "hello vue.js from vue";
 </script>
 
 <style scoped>
