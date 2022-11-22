@@ -33,8 +33,8 @@
 <script setup>
 import axios from "axios";
 import { reactive } from "vue";
-import Header from "./components/templates/Header.vue";
-import Footer from "./components/templates/Footer.vue";
+import Header from "../templates/Header.vue";
+import Footer from "../templates/Footer.vue";
 
 let books = reactive([]);
 const message = "hello vue.js from vue";
