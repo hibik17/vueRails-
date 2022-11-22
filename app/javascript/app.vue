@@ -26,6 +26,7 @@
         </tbody>
       </table>
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -33,6 +34,8 @@
 import axios from "axios";
 import { reactive } from "vue";
 import Header from "./components/templates/Header.vue";
+import Footer from "./components/templates/Footer.vue";
+
 let books = reactive([]);
 const message = "hello vue.js from vue";
 
