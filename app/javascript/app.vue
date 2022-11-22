@@ -1,23 +1,43 @@
 <template>
-  <p class="text-red-300">
-    {{ message }}
-  </p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>title</th>
-        <th>body</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="(book, index) in books" :key="index">
-        <td>{{ book.title }}</td>
-        <td>{{ book.body }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <div>{{ books }}</div>
+  <div class="w-full min-h-screen">
+    <!-- header -->
+    <nav class="w-full h-12 bg-gray-700">
+      <div class="container mx-auto py-2 flex">
+        <div>
+          <p class="text-white font-bold font-mono">Bookers</p>
+        </div>
+        <div>
+          <ul class="flex flex-end">
+            users
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="grid grid-cols-2 container mx-auto">
+      <div class="cols">
+        <form>
+          <label for="title">Title</label>
+          <input type="text" placeholder="title" />
+          <label for="body">Body</label>
+          <input type="text" placeholder="body" />
+        </form>
+      </div>
+      <table class="w-full table-auto">
+        <thead>
+          <tr>
+            <th>title</th>
+            <th>body</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          <tr v-for="(book, index) in books" :key="index">
+            <td>{{ book.title }}</td>
+            <td>{{ book.body }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -36,10 +56,3 @@ axios
   .catch((err) => alert(err.message))
   .finally(() => console.log("data fetching has finished..."));
 </script>
-
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
-</style>
