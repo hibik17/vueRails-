@@ -1,5 +1,5 @@
 // define page routing in this file
-import Vue from "vue";
+import * as Vue from "vue";
 import VueRouter from "vue-router";
 // import page from ./components/pages
 import Index from "./components/pages/Index.vue";
@@ -14,4 +14,4 @@ const routes = [
   { path: "/books/1", component: Show },
 ];
 
-export const router = VueRouter.new({ routes: routes });
+const router = VueRouter.new({ routes: routes });
