@@ -17,19 +17,21 @@
       </tr>
     </tbody>
   </table>
+  <div>{{ books }}</div>
 </template>
 
 <script setup>
 import axios from "axios";
 import { reactive } from "vue";
 
-const books = reactive([]);
+let books = reactive([]);
 const message = "hello vue.js from vue";
 
 axios
   .get("/api/v1/books")
   .then((res) => {
     console.log(res.data);
+    books.push(...res.data);
   })
   .catch((err) => alert(err.message))
   .finally(() => console.log("data fetching has finished..."));
