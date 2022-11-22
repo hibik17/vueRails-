@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./app/javascript/*.vue"],
+  content: ["./app/javascript/**/*.vue"],
   theme: {
     extend: {},
   },

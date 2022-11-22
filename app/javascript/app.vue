@@ -1,18 +1,7 @@
 <template>
   <div class="w-full min-h-screen">
     <!-- header -->
-    <nav class="w-full h-12 bg-gray-700">
-      <div class="container mx-auto py-2 flex">
-        <div>
-          <p class="text-white font-bold font-mono">Bookers</p>
-        </div>
-        <div>
-          <ul class="flex flex-end">
-            users
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <Header />
     <div class="grid grid-cols-2 container mx-auto">
       <div class="cols">
         <form>
@@ -43,7 +32,7 @@
 <script setup>
 import axios from "axios";
 import { reactive } from "vue";
-
+import Header from "./components/templates/Header.vue";
 let books = reactive([]);
 const message = "hello vue.js from vue";
 
