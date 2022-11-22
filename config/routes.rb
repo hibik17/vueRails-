@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      get 'books/index'
-      get 'books/show'
-      get 'books/edit'
+      resources :books
     end
   end
   root :to => 'homes#top'
