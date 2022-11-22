@@ -28,7 +28,9 @@ const message = "hello vue.js from vue";
 
 axios
   .get("/api/v1/books")
-  .then((res) => books.push(res.data))
+  .then((res) => {
+    console.log(res.data);
+  })
   .catch((err) => alert(err.message))
   .finally(() => console.log("data fetching has finished..."));
 </script>
