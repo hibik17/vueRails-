@@ -1,5 +1,5 @@
 <template>
-  <p>
+  <p class="text-red-300">
     {{ message }}
   </p>
 
