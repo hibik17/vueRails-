@@ -1,14 +1,16 @@
-// import page from ./components/pages
-import Index from "./components/pages/Index.vue";
-import About from "./components/pages/About.vue";
-import Show from "./components/pages/Show.vue";
+// import Vue from "vue";
+// import VueRouter from "vue-router";
 
-Vue.use(VueRouter);
+// // import page from ./components/pages
+// import Index from "./components/pages/Index.vue";
+// import About from "./components/pages/About.vue";
+// import Show from "./components/pages/Show.vue";
 
-const routes = [
-  { path: "/", component: About },
-  { path: "/books", component: Index },
-  { path: "/books/1", component: Show },
-];
+// Vue.use(VueRouter);
 
-export const router = VueRouter.new({ routes: routes });
+// const routes = [
+//   { path: "/", component: About },
+//   { path: "/books", component: Index },
+//   { path: "/books/1", component: Show },
+// ];
+// const router = VueRouter.new({ routes: routes });
