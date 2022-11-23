@@ -1,16 +1,27 @@
-// import Vue from "vue";
-// import VueRouter from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
-// // import page from ./components/pages
-// import Index from "./components/pages/Index.vue";
-// import About from "./components/pages/About.vue";
-// import Show from "./components/pages/Show.vue";
+// 1. Define route components.
+// These can be imported from other files
+const Home = { template: "<div>Home</div>" };
 
-// Vue.use(VueRouter);
+// 2. Define some routes
+// Each route should map to a component.
+// We'll talk about nested routes later.
+const routes = [
+  { path: "/", component: Home },
+  { path: "/about", component: About },
+];
 
-// const routes = [
-//   { path: "/", component: About },
-//   { path: "/books", component: Index },
-//   { path: "/books/1", component: Show },
-// ];
-// const router = VueRouter.new({ routes: routes });
+// 3. Create the router instance and pass the `routes` option
+// You can pass in additional options here, but let's
+// keep it simple for now.
+export const router = createRouter({
+  // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
+  history: createWebHistory(),
+  routes: routes, // short for `routes: routes`
+});
+
+// Make sure to _use_ the router instance to make the
+// whole app router-aware.
+
+// Now the app has started!
