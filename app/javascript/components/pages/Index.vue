@@ -1,8 +1,7 @@
 <template>
   <div class="w-full min-h-screen">
     <!-- header -->
-    <Header />
-    <div class="grid grid-cols-2 container mx-auto">
+    <div class="container grid grid-cols-2 mx-auto">
       <div class="cols">
         <form>
           <label for="title">Title</label>
@@ -26,7 +25,6 @@
         </tbody>
       </table>
     </div>
-    <Footer />
   </div>
 </template>
 

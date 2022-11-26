@@ -1,7 +1,5 @@
 <script setup>
 import { ref, computed } from "vue";
-import Index from "./components/pages/Index.vue";
-import About from "./components/pages/About.vue";
 import Header from "./components/templates/Header.vue";
 import Footer from "./components/templates/Footer.vue";
 
