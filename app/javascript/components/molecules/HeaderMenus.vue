@@ -9,7 +9,7 @@
           class="font-semibold text-white"
           v-for="(value, key) in menu"
           v-slot="{ href, isActive, navigate }"
-          :to="{ value }"
+          :to="{ path: value }"
         >
           <NavLink :active="isActive" :href="href" :navigate="navigate">
             {{ key }}
