@@ -1,8 +1,7 @@
 <template>
   <div class="w-full min-h-screen">
     <!-- header -->
-    <Header />
-    <div class="grid grid-cols-2 container mx-auto">
+    <div class="container grid grid-cols-2 mx-auto">
       <div class="cols">
         <form>
           <label for="title">Title</label>
@@ -26,15 +25,14 @@
         </tbody>
       </table>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script setup>
 import axios from "axios";
 import { reactive } from "vue";
-import Header from "./components/templates/Header.vue";
-import Footer from "./components/templates/Footer.vue";
+import Header from "../templates/Header.vue";
+import Footer from "../templates/Footer.vue";
 
 let books = reactive([]);
 const message = "hello vue.js from vue";
