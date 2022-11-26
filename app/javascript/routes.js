@@ -8,8 +8,8 @@ import Index from "./components/pages/Index.vue";
 // Each route should map to a component.
 // We'll talk about nested routes later.
 const routes = [
-  { path: "/", component: Index },
-  { path: "/about", component: About },
+  { name: "index", path: "/", component: Index },
+  { name: "top", path: "/about", component: About },
 ];
 
 // 3. Create the router instance and pass the `routes` option
