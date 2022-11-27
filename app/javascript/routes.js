@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import About from "./components/pages/About.vue";
 import Index from "./components/pages/Index.vue";
+import Show from "./components/pages/Show.vue";
 
 // 1. Define route components.
 
@@ -10,6 +11,7 @@ import Index from "./components/pages/Index.vue";
 const routes = [
   { name: "top", path: "/", component: About },
   { name: "index", path: "/books", component: Index },
+  { name: "show", path: "/books/1", component: Show },
 ];
 
 // 3. Create the router instance and pass the `routes` option

@@ -23,5 +23,5 @@
 </template>
 
 <script setup>
-const linkArray = [{ Login: "/books" }, { Signup: "/" }];
+const linkArray = [{ Login: "/books" }, { Signup: "/books/1" }];
 </script>
