@@ -5,10 +5,10 @@
     :key="index"
   >
     <router-link
-      v-for="(value, key) in link"
       v-slot="{ href, isActive, navigate }"
-      :to="{ path: value }"
-      class="w-[70%] mx-auto bg-green-400 my-2 rounded-sm text-center"
+      :to="{ path: link.url }"
+      class="w-[80%] mx-auto my-2 rounded-sm text-center"
+      :class="link.bg_color"
     >
       <NavLink
         :active="isActive"
@@ -16,12 +16,23 @@
         :navigate="navigate"
         class="text-[60%] text-white"
       >
-        {{ key }}
+        {{ link.title }}
       </NavLink>
     </router-link>
   </div>
 </template>
 
 <script setup>
-const linkArray = [{ Login: "/books" }, { Signup: "/books/1" }];
+const linkArray = [
+  {
+    title: "Log in",
+    url: "/Log_in",
+    bg_color: "bg-blue-600",
+  },
+  {
+    title: "Sign up",
+    url: "/Sing_up",
+    bg_color: "bg-green-600",
+  },
+];
 </script>
