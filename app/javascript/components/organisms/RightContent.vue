@@ -1,7 +1,7 @@
 <template>
   <p class="font-sans text-xl font-bold">Books</p>
-  <table class="w-full table-auto">
-    <thead>
+  <table class="w-full border-collapse table-auto">
+    <thead class="border-t border-b border-t-slate-200 border-b-slate-300">
       <tr>
         <th>title</th>
         <th>body</th>

@@ -1,16 +1,18 @@
 <template>
-  <div>
-    <table class="border-separate table-auto border-spacing-2">
-      <tr class="border border-t-2 border-slate-700">
-        <td>name</td>
-        <td>wavy</td>
-      </tr>
-      <tr class="border border-t-2 border-slate-700">
-        <td>introduction</td>
-        <td>hello world</td>
-      </tr>
-    </table>
+  <div class="m-3">
+    <div class="flex justify-center w-[80%]">
+      <UserIcon width="w-[50px]" height="h-[80px]" />
+    </div>
+    <UserInfoTable :user="user" />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import UserIcon from "../atoms/UserIcon.vue";
+import UserInfoTable from "./UserInfoTable.vue";
+
+const user = {
+  name: "havana",
+  introduction: "hello my name is havana",
+};
+</script>
