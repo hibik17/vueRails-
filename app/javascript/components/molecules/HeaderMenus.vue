@@ -7,12 +7,11 @@
       <li v-for="(menu, index) in menus" :key="index">
         <router-link
           class="font-serif text-sm text-white"
-          v-for="(value, key) in menu"
           v-slot="{ href, isActive, navigate }"
-          :to="{ path: value }"
+          :to="{ path: menu.url }"
         >
           <NavLink :active="isActive" :href="href" :navigate="navigate">
-            {{ key }}
+            {{ menu.title }}
           </NavLink>
         </router-link>
       </li>
@@ -21,11 +20,24 @@
 </template>
 
 <script setup>
-// define header menu array
+import BookIcon from "../atoms/BookIcon.vue";
+
 const menus = [
-  { home: "/home" },
-  { About: "/about" },
-  { Users: "/users" },
-  { LogOut: "/logout" },
+  {
+    title: "Home",
+    url: "/home",
+  },
+  {
+    title: "About",
+    url: "/About",
+  },
+  {
+    title: "Log in",
+    url: "/LogIn",
+  },
+  {
+    title: "Sign in",
+    url: "/SignIn",
+  },
 ];
 </script>
