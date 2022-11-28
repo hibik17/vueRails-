@@ -1,29 +1,37 @@
 <template>
-  <div class="w-full min-h-screen">
-    <!-- header -->
-    <div class="container grid grid-cols-2 mx-auto">
-      <div class="cols">
-        <form>
-          <label for="title">Title</label>
-          <input type="text" placeholder="title" />
-          <label for="body">Body</label>
-          <input type="text" placeholder="body" />
-        </form>
+  <div class="container w-full min-h-screen mx-auto mt-5">
+    <div class="grid grid-cols-3 gap-2">
+      <!-- left content -->
+      <div>
+        <!-- user info -->
+        <div>
+          <p class="font-sans text-xl font-bold">User info</p>
+          <UserInfo />
+        </div>
+        <!-- book form -->
+        <div>
+          <p class="font-sans text-xl font-bold">New Book</p>
+          <BookForm />
+        </div>
       </div>
-      <table class="w-full table-auto">
-        <thead>
-          <tr>
-            <th>title</th>
-            <th>body</th>
-          </tr>
-        </thead>
-        <tbody class="text-center">
-          <tr v-for="(book, index) in books" :key="index">
-            <td>{{ book.title }}</td>
-            <td>{{ book.body }}</td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- right content -->
+      <div class="col-span-2">
+        <p class="font-sans text-xl font-bold">Books</p>
+        <table class="w-full table-auto">
+          <thead>
+            <tr>
+              <th>title</th>
+              <th>body</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr v-for="(book, index) in books" :key="index">
+              <td>{{ book.title }}</td>
+              <td>{{ book.body }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -31,12 +39,10 @@
 <script setup>
 import axios from "axios";
 import { reactive } from "vue";
-import Header from "../templates/Header.vue";
-import Footer from "../templates/Footer.vue";
+import BookForm from "../molecules/BookForm.vue";
+import UserInfo from "../molecules/UserInfo.vue";
 
 let books = reactive([]);
-const message = "hello vue.js from vue";
-
 axios
   .get("/api/v1/books")
   .then((res) => {

@@ -1,3 +1,3 @@
 <template>
-  <div class="w-full text-center">&copy; infratop</div>
+  <div class="h-[10px] w-full text-center">&copy; infratop</div>
 </template>
