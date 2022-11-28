@@ -26,7 +26,7 @@
 const linkArray = [
   {
     title: "Log in",
-    url: "/Log_in",
+    url: "/books",
     bg_color: "bg-blue-600",
   },
   {
