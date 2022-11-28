@@ -1,5 +1,6 @@
 <template>
   <div class="w-[40%] mx-auto mt-6">
+    <fa icon="leaf" class="w-10 h-10"></fa>
     <div class="m-2 text-2xl font-semibold">
       welcome to <span class="text-3xl font-bold">Bookers !!</span>
     </div>
