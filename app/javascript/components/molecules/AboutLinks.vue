@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-center m-2"
+    class="flex justify-center m-1"
     v-for="(link, index) in linkArray"
     :key="index"
   >
