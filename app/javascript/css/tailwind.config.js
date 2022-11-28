@@ -1,8 +1,17 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+
+const customColors = {
+  header: "#343a40",
+};
+
+const header = (module.exports = {
   content: ["./app/javascript/**/*.vue"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        header: customColors.header,
+      },
+    },
   },
   plugins: [],
-};
+});
