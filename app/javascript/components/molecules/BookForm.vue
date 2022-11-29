@@ -11,9 +11,9 @@
     <div class="m-3">
       <label for="body">Body</label>
       <br />
-      <input
-        type="text"
-        class="w-[80%] text-sm border rounded-sm border-slate-400 focus:border-blue-400 h-[60px]"
+      <textarea
+        row="4"
+        class="w-[80%] text-sm border rounded-sm border-slate-400 focus:border-blue-400"
       />
     </div>
     <div class="w-full ml-[20px]">
