@@ -5,7 +5,7 @@
       <BookIcon width="w-5" height="w-5" />
       <span class="text-2xl font-bold">Bookers !!</span>
     </div>
-    <div class="m-1 font-base semibold text-">
+    <div class="m-1 font-base semibold">
       In
       <BookIcon width="w-4" height="w-4" />
       Bookers,

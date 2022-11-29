@@ -1,14 +1,13 @@
 <template>
   <div class="m-3">
     <div class="flex justify-center w-[80%]">
-      <UserIcon width="w-[50px]" height="h-[80px]" />
+      <img src="../../assets/img/noimage.png" alt="Logo" class="w-10 h-10" />
     </div>
     <UserInfoTable :user="user" />
   </div>
 </template>
 
 <script setup>
-import UserIcon from "../atoms/UserIcon.vue";
 import UserInfoTable from "./UserInfoTable.vue";
 
 const user = {

@@ -3,12 +3,20 @@
   <table class="w-full border-collapse table-auto">
     <thead class="border-t border-b border-t-slate-200 border-b-slate-300">
       <tr>
+        <th></th>
         <th>title</th>
         <th>body</th>
       </tr>
     </thead>
     <tbody class="text-center">
       <tr v-for="(book, index) in books" :key="index">
+        <td>
+          <img
+            src="../../assets/img/noimage.png"
+            alt="user image"
+            class="object-fill w-[50px] h-[30px]"
+          />
+        </td>
         <td>{{ book.title }}</td>
         <td>{{ book.body }}</td>
       </tr>
