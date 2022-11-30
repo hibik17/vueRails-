@@ -15,8 +15,8 @@
 <script setup>
 import axios from "axios";
 import { reactive } from "vue";
-import LeftContent from "../organisms/LeftContent.vue";
-import RightContent from "../organisms/RightContent.vue";
+import LeftContent from "../../organisms/LeftContent.vue";
+import RightContent from "../../organisms/RightContent.vue";
 
 let books = reactive([]);
 axios

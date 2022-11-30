@@ -25,19 +25,19 @@ import BookIcon from "../atoms/BookIcon.vue";
 const menus = [
   {
     title: "Home",
-    url: "/home",
+    url: "/users/1",
   },
   {
     title: "About",
-    url: "/About",
+    url: "/",
   },
   {
     title: "Log in",
-    url: "/LogIn",
+    url: "/books",
   },
   {
     title: "Sign in",
-    url: "/SignIn",
+    url: "/books",
   },
 ];
 </script>

@@ -1,8 +1,9 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import About from "./components/pages/About.vue";
-import Index from "./components/pages/Index.vue";
-import Show from "./components/pages/Show.vue";
-
+import BooksIndex from "./components/pages/books/Index.vue";
+import BooksShow from "./components/pages/books/Show.vue";
+import UserIndex from "./components/pages/users/Index.vue";
+import UserShow from "./components/pages/users/Show.vue";
 // 1. Define route components.
 
 // 2. Define some routes
@@ -10,8 +11,10 @@ import Show from "./components/pages/Show.vue";
 // We'll talk about nested routes later.
 const routes = [
   { name: "top", path: "/", component: About },
-  { name: "index", path: "/books", component: Index },
-  { name: "show", path: "/books/1", component: Show },
+  { name: "books_index", path: "/books", component: BooksIndex },
+  { name: "books_show", path: "/books/:id", component: BooksShow },
+  { name: "users_index", path: "/users", component: UserIndex },
+  { name: "users_show", path: "/users/:id", component: UserShow },
 ];
 
 // 3. Create the router instance and pass the `routes` option
