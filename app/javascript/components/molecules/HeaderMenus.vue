@@ -7,12 +7,9 @@
       <li v-for="(menu, index) in menus" :key="index">
         <router-link
           class="font-serif text-sm text-white"
-          v-slot="{ href, isActive, navigate }"
           :to="{ path: menu.url }"
         >
-          <NavLink :active="isActive" :href="href" :navigate="navigate">
-            {{ menu.title }}
-          </NavLink>
+          {{ menu.title }}
         </router-link>
       </li>
     </ul>

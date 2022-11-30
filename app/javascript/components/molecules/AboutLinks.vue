@@ -5,19 +5,11 @@
     :key="index"
   >
     <router-link
-      v-slot="{ href, isActive, navigate }"
       :to="{ path: link.url }"
       class="w-[80%] mx-auto my-2 rounded-sm text-center"
       :class="link.bg_color"
     >
-      <NavLink
-        :active="isActive"
-        :href="href"
-        :navigate="navigate"
-        class="text-[60%] text-white"
-      >
-        {{ link.title }}
-      </NavLink>
+      {{ link.title }}
     </router-link>
   </div>
 </template>
