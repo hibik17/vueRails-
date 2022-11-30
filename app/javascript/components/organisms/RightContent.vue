@@ -14,7 +14,7 @@
           <img
             src="../../assets/img/noimage.png"
             alt="user image"
-            class="object-fill w-[50px] h-[30px]"
+            class="object-fill w-[50px] h-[60px]"
           />
         </td>
         <td>{{ book.title }}</td>

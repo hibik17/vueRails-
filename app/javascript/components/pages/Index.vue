@@ -1,6 +1,6 @@
 <template>
-  <div class="container w-full min-h-screen mx-auto mt-5">
-    <div class="grid grid-cols-3 gap-10">
+  <div class="w-[70%] min-h-screen mx-auto mt-5">
+    <div class="grid grid-cols-3 gap-7">
       <div>
         <LeftContent />
       </div>
