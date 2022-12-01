@@ -6,7 +6,7 @@
   >
     <router-link
       :to="{ path: link.url }"
-      class="w-[80%] mx-auto my-2 rounded-sm text-center"
+      class="w-[80%] mx-auto my-2 rounded-sm text-center text-sm text-white"
       :class="link.bg_color"
     >
       {{ link.title }}
