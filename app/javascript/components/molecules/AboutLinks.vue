@@ -23,7 +23,7 @@ const linkArray = [
   },
   {
     title: "Sign up",
-    url: "/Sing_up",
+    url: "/",
     bg_color: "bg-green-600",
   },
 ];
