@@ -4,7 +4,6 @@
       <div>
         <LeftContent />
       </div>
-      <!-- right content -->
       <div class="col-span-2">
         <RightContent :books="books" />
       </div>
@@ -14,11 +13,14 @@
 
 <script setup>
 import axios from "axios";
-import { reactive } from "vue";
+import { reactive, onMounted, onUpdated } from "vue";
+import { useRoute } from "vue-router";
 import LeftContent from "../../organisms/LeftContent.vue";
 import RightContent from "../../organisms/RightContent.vue";
 
-let books = reactive([]);
+const route = useRoute();
+let books = reactive([{}]);
+
 axios
   .get("/api/v1/books")
   .then((res) => {
@@ -26,5 +28,8 @@ axios
     books.push(...res.data);
   })
   .catch((err) => alert(err.message))
-  .finally(() => console.log("data fetching has finished..."));
+  .finally(() => {
+    console.log("data fetching has finished...");
+    route.push("/books");
+  });
 </script>

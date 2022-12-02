@@ -10,4 +10,9 @@ class Api::V1::BooksController < ApplicationController
   def edit
     render :json => Book.find(params[:id]), status: 'sucess'
   end
+
+  def create
+    Book.create(title: params[:title], body: params[:body])
+    redirect_to '/#/books'
+  end
 end
