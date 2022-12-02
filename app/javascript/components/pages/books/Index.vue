@@ -14,13 +14,12 @@
 <script setup>
 import axios from "axios";
 import { reactive, onMounted, onUpdated } from "vue";
-import { useRoute } from "vue-router";
 import LeftContent from "../../organisms/LeftContent.vue";
 import RightContent from "../../organisms/RightContent.vue";
 
-const router = useRoute();
-let books = reactive([{}]);
+const books = reactive([{}]);
 
+// execute when page was loaded at the first time
 onMounted(() => {
   axios
     .get("/api/v1/books")
@@ -34,8 +33,8 @@ onMounted(() => {
     });
 });
 
+// execute when the books value has changed
 onUpdated(() => {
-  alert("updated");
   axios
     .get("/api/v1/books")
     .then((res) => {

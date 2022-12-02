@@ -5,19 +5,21 @@
 
 <script setup>
 import axios from "axios";
-import { computed } from "vue";
+import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
 
-const getBook = computed(() => {
-  const book = {};
+const router = useRoute();
+const book = ref({ title: "", body: "" });
 
+onMounted(() => {
   axios
-    .get("/api/v1/books/1")
+    .get(`http://localhost:3000/api/v1/books/${router.params.id}`)
     .then((res) => {
-      console.log(res.data);
-      book.push(...res.data);
+      console.log(res);
+      book.value.title = res.data.title;
+      book.value.body = res.data.body;
     })
-    .catch((err) => alert(err.message))
-    .finally(() => console.log("data fetching action done ...."));
-  return book;
+    .catch((err) => console.log(err))
+    .finally(() => console.log("data fetching done ..."));
 });
 </script>
