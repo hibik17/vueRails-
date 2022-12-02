@@ -18,18 +18,33 @@ import { useRoute } from "vue-router";
 import LeftContent from "../../organisms/LeftContent.vue";
 import RightContent from "../../organisms/RightContent.vue";
 
-const route = useRoute();
+const router = useRoute();
 let books = reactive([{}]);
 
-axios
-  .get("/api/v1/books")
-  .then((res) => {
-    console.log(res.data);
-    books.push(...res.data);
-  })
-  .catch((err) => alert(err.message))
-  .finally(() => {
-    console.log("data fetching has finished...");
-    route.push("/books");
-  });
+onMounted(() => {
+  axios
+    .get("/api/v1/books")
+    .then((res) => {
+      console.log(res.data);
+      books.push(...res.data);
+    })
+    .catch((err) => alert(err.message))
+    .finally(() => {
+      console.log("data fetching has finished...");
+    });
+});
+
+onUpdated(() => {
+  alert("updated");
+  axios
+    .get("/api/v1/books")
+    .then((res) => {
+      console.log(res.data);
+      books.push(...res.data);
+    })
+    .catch((err) => alert(err.message))
+    .finally(() => {
+      console.log("data fetching has finished...");
+    });
+});
 </script>

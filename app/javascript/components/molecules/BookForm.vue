@@ -42,6 +42,10 @@ const createBook = async () => {
     .post("http://localhost:3000/api/v1/books", formData)
     .then((res) => console.log(res.data))
     .catch((err) => console.log(err))
-    .finally(() => console.log("book create success"));
+    .finally(() => {
+      console.log("book create success");
+      formData.title = "";
+      formData.body = "";
+    });
 };
 </script>
