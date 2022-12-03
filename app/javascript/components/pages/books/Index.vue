@@ -13,11 +13,17 @@
 
 <script setup>
 import axios from "axios";
-import { reactive, onMounted, onUpdated } from "vue";
+import { reactive, onMounted, onUpdated, watch } from "vue";
 import LeftContent from "../../organisms/LeftContent.vue";
 import RightContent from "../../organisms/RightContent.vue";
 
-const books = reactive([{}]);
+const books = reactive([]);
+
+watch((books) => {
+  console.log("books data has changed");
+  console.log(books);
+  console.log("console.log done ...");
+});
 
 // execute when page was loaded at the first time
 onMounted(() => {

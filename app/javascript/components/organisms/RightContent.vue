@@ -17,7 +17,14 @@
             class="object-fill w-[50px] h-[60px]"
           />
         </td>
-        <td>{{ book.title }}</td>
+        <td>
+          <router-link
+            :to="`/books/${book.id}`"
+            class="text-blue-400 underline"
+          >
+            {{ book.title }}
+          </router-link>
+        </td>
         <td>{{ book.body }}</td>
       </tr>
     </tbody>
@@ -25,6 +32,8 @@
 </template>
 
 <script setup>
+import { RouterLink } from "vue-router";
+
 const { books } = defineProps({
   books: Array | { title: String, body: String },
 });
