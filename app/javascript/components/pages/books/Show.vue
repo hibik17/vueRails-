@@ -1,23 +1,31 @@
 <template>
-  <div>this is show page</div>
-  <span>{{ book }}</span>
+  <div class="w-[70%] min-h-screen mx-auto mt-5">
+    <div class="grid grid-cols-3 gap-7">
+      <div>
+        <LeftContent />
+      </div>
+      <div class="col-span-2">
+        <RightContent :data="book" />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
 import axios from "axios";
-import { onMounted, ref } from "vue";
+import { onMounted, reactive } from "vue";
 import { useRoute } from "vue-router";
+import LeftContent from "../../organisms/LeftContent.vue";
+import RightContent from "../../organisms/RightContent.vue";
 
 const router = useRoute();
-const book = ref({ title: "", body: "" });
+const book = reactive([]);
 
 onMounted(() => {
   axios
     .get(`http://localhost:3000/api/v1/books/${router.params.id}`)
     .then((res) => {
-      console.log(res);
-      book.value.title = res.data.title;
-      book.value.body = res.data.body;
+      const book = reactive([res.data]);
     })
     .catch((err) => console.log(err))
     .finally(() => console.log("data fetching done ..."));

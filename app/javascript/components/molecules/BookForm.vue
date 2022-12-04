@@ -31,6 +31,9 @@
 <script setup>
 import { reactive } from "vue";
 import axios from "axios";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const formData = reactive({ title: "", body: "" });
 
 const createBook = async () => {
@@ -46,6 +49,7 @@ const createBook = async () => {
       console.log("book create success");
       formData.title = "";
       formData.body = "";
+      router.push("/books");
     });
 };
 </script>

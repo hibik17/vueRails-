@@ -5,7 +5,7 @@
         <LeftContent />
       </div>
       <div class="col-span-2">
-        <RightContent :books="books" />
+        <RightContent :data="books" />
       </div>
     </div>
   </div>
@@ -30,7 +30,6 @@ onMounted(() => {
   axios
     .get("/api/v1/books")
     .then((res) => {
-      console.log(res.data);
       books.push(...res.data);
     })
     .catch((err) => alert(err.message))
@@ -45,7 +44,6 @@ onUpdated(() => {
     .get("/api/v1/books")
     .then((res) => {
       console.log(res.data);
-      books.push(...res.data);
     })
     .catch((err) => alert(err.message))
     .finally(() => {

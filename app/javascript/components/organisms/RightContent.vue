@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody class="text-center">
-      <tr v-for="(book, index) in books" :key="index">
+      <tr v-for="d in data" :key="data.id">
         <td>
           <img
             src="../../assets/img/noimage.png"
@@ -18,14 +18,11 @@
           />
         </td>
         <td>
-          <router-link
-            :to="`/books/${book.id}`"
-            class="text-blue-400 underline"
-          >
-            {{ book.title }}
+          <router-link :to="`/books/${d.id}`" class="text-blue-400 underline">
+            {{ d.title }}
           </router-link>
         </td>
-        <td>{{ book.body }}</td>
+        <td>{{ d.body }}</td>
       </tr>
     </tbody>
   </table>
@@ -34,7 +31,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
 
-const { books } = defineProps({
-  books: Array | { title: String, body: String },
+const { data } = defineProps({
+  data: Array,
 });
 </script>
