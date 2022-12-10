@@ -13,26 +13,20 @@
 
 <script setup>
 import axios from "axios";
-import { onMounted, ref } from "vue";
+import { onMounted, reactive } from "vue";
 import { useRoute } from "vue-router";
 import LeftContent from "../../organisms/LeftContent.vue";
 import RightContent from "../../organisms/RightContent.vue";
 
 const router = useRoute();
-const book = ref({
-  title: "",
-  body: "",
-});
+const book = reactive([]);
 
 onMounted(() => {
   axios
     .get(`http://localhost:3000/api/v1/books/${router.params.id}`)
     .then((res) => {
       console.log(res.data);
-      book.value = {
-        title: res.data.title,
-        body: res.data.body,
-      };
+      book.push(...res.data);
     })
     .catch((err) => console.log(err))
     .finally(() => console.log("data fetching done ..."));
